@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        var ref = Firebase(url: "https://hacker-news.firebaseio.com/v0/item/8863/by/")
+        var ref = Firebase(url: "https://hacker-news.firebaseio.com/v0/item/8863")
         
         ref.observeEventType(.Value, withBlock: { (snapshot:FDataSnapshot!) -> Void in
             println(snapshot.value)
