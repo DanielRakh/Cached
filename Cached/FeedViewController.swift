@@ -7,31 +7,42 @@
 //
 
 import UIKit
+import XCGLogger
 
 public class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var storyCollection = [AnyObject]()
     
+
+
     public override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+   
         tableView.dataSource = self
         tableView.delegate = self
+        
+
+        
+        
     }
-
-
+    
+    public override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
 }
 
 extension FeedViewController : UITableViewDataSource {
     
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20 
+        return storyCollection.count
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+//        cell.textLabel?.text = (storyCollection[indexPath.row] as CDStoryItem)._title
         cell.textLabel?.text = "\(indexPath.row)"
         return cell
     }
