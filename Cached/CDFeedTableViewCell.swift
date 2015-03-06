@@ -11,6 +11,7 @@ import UIKit
 class CDFeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -32,7 +32,6 @@ public class CDFeedViewController: UIViewController {
             self.storyCollection = storyItems
             self.tableView.reloadData()
         }
-        
     }
     
     public override func viewDidAppear(animated: Bool) {
@@ -48,8 +47,8 @@ extension CDFeedViewController : UITableViewDataSource {
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = (storyCollection[indexPath.row])._title
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CDFeedTableViewCell
+        cell.titleLabel.text = (storyCollection[indexPath.row])._title
         return cell
     }
     

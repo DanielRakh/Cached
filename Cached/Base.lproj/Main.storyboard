@@ -27,9 +27,40 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-we-Vkc">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show HN: Hacker News Cached " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwr-6a-nvF">
+                                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Nwr-6a-nvF" firstAttribute="leading" secondItem="Tza-we-Vkc" secondAttribute="leading" constant="10" id="3Ne-Yu-EHu"/>
+                                                        <constraint firstItem="Nwr-6a-nvF" firstAttribute="top" secondItem="Tza-we-Vkc" secondAttribute="top" constant="10" id="Gpk-Gb-PPb"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="subviews">
+                                                            <exclude reference="Nwr-6a-nvF"/>
+                                                        </mask>
+                                                        <mask key="constraints">
+                                                            <exclude reference="3Ne-Yu-EHu"/>
+                                                            <exclude reference="Gpk-Gb-PPb"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="subviews">
+                                                            <include reference="Nwr-6a-nvF"/>
+                                                        </mask>
+                                                        <mask key="constraints">
+                                                            <include reference="3Ne-Yu-EHu"/>
+                                                            <include reference="Gpk-Gb-PPb"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="Tza-we-Vkc" firstAttribute="top" secondItem="sXR-ZP-RHl" secondAttribute="top" constant="10" id="QaB-0E-aE1">
                                                     <variation key="widthClass=compact" constant="0.0"/>
@@ -69,6 +100,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cardView" destination="Tza-we-Vkc" id="twE-H7-YCY"/>
+                                            <outlet property="titleLabel" destination="Nwr-6a-nvF" id="Nwu-cl-aJk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -121,6 +153,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qo4-rQ-qe7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                             <color key="textColor" red="0.9882352941176471" green="0.40000000000000002" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
