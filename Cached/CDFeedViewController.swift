@@ -22,6 +22,10 @@ public class CDFeedViewController: UIViewController {
    
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .None
+        tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0)
+        
+        view.backgroundColor = UIColor.cdOffWhite()
         
         dataManager.createStoryItemsForTopStories(20) {
             storyItems in

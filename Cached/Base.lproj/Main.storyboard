@@ -16,15 +16,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KCH-9f-ML0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="KCH-9f-ML0" customClass="CDFeedTableView" customModule="Cached" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="qC0-Vd-nJp">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="90" id="qC0-Vd-nJp" customClass="CDFeedTableViewCell" customModule="Cached" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qC0-Vd-nJp" id="sXR-ZP-RHl">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-we-Vkc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Tza-we-Vkc" firstAttribute="top" secondItem="sXR-ZP-RHl" secondAttribute="top" constant="10" id="QaB-0E-aE1">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
+                                                <constraint firstAttribute="bottom" secondItem="Tza-we-Vkc" secondAttribute="bottom" constant="10" id="Rcz-rR-8K4">
+                                                    <variation key="widthClass=compact" constant="10"/>
+                                                </constraint>
+                                                <constraint firstItem="Tza-we-Vkc" firstAttribute="leading" secondItem="sXR-ZP-RHl" secondAttribute="leading" constant="10" id="YfY-YR-9NF">
+                                                    <variation key="widthClass=compact" constant="10"/>
+                                                </constraint>
+                                                <constraint firstAttribute="trailing" secondItem="Tza-we-Vkc" secondAttribute="trailing" constant="10" id="lwb-sz-BBQ">
+                                                    <variation key="widthClass=compact" constant="10"/>
+                                                </constraint>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Tza-we-Vkc"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="QaB-0E-aE1"/>
+                                                    <exclude reference="Rcz-rR-8K4"/>
+                                                    <exclude reference="YfY-YR-9NF"/>
+                                                    <exclude reference="lwb-sz-BBQ"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Tza-we-Vkc"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="QaB-0E-aE1"/>
+                                                    <include reference="Rcz-rR-8K4"/>
+                                                    <include reference="YfY-YR-9NF"/>
+                                                    <include reference="lwb-sz-BBQ"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardView" destination="Tza-we-Vkc" id="twE-H7-YCY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -59,7 +104,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Cached" id="QAp-sG-EFm"/>
+                    <navigationItem key="navigationItem" title="Hacker News" id="QAp-sG-EFm"/>
                     <connections>
                         <outlet property="tableView" destination="KCH-9f-ML0" id="j3U-Tl-QoO"/>
                     </connections>
@@ -77,6 +122,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                             <color key="textColor" red="0.9882352941176471" green="0.40000000000000002" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>

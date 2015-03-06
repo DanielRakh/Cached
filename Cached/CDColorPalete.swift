@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 extension UIColor {
     
     class func cdOrange() -> UIColor  {
@@ -22,6 +20,10 @@ extension UIColor {
     
     class func cdWhite() -> UIColor {
         return UIColor(red:1.000, green:1.000 , blue:1.000, alpha: 1.0)
+    }
+    
+    class func cdLightGray() -> UIColor {
+        return UIColor(red:0.824, green:0.824 , blue:0.824, alpha: 1.0)
     }
 }
 

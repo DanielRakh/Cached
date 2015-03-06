@@ -10,15 +10,17 @@ import UIKit
 
 class CDFeedTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cardView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundColor = UIColor.clearColor()
+        contentView.backgroundColor = UIColor.clearColor()
+        cardView.backgroundColor = UIColor.cdWhite()
+        cardView.layer.cornerRadius = 8.0
+        cardView.layer.borderWidth = 0.5
+        cardView.layer.borderColor = UIColor.cdLightGray().CGColor
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
