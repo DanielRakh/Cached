@@ -17,7 +17,6 @@ public class CDNetworkService {
         
     }
     
-    
     public func fetchTopStories(count:UInt, completion:(stories:[AnyObject]) -> Void) {
         
         var stories = [AnyObject]()
