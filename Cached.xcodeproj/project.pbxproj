@@ -19,6 +19,7 @@
 		8EAAC6221AA7AE10002B637D /* CDStoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAAC6211AA7AE10002B637D /* CDStoryItem.swift */; };
 		8EAAC62F1AA7DAF1002B637D /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAAC62A1AA7DAD3002B637D /* XCGLogger.framework */; };
 		8EAAC6301AA7DAF1002B637D /* XCGLogger.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8EAAC62A1AA7DAD3002B637D /* XCGLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8EABC12A1AA921C100A28B22 /* CDDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABC1291AA921C100A28B22 /* CDDataManager.swift */; };
 		8ED2114A1AA38D610034CE9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED211491AA38D610034CE9D /* AppDelegate.swift */; };
 		8ED2114C1AA38D610034CE9D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2114B1AA38D610034CE9D /* FeedViewController.swift */; };
 		8ED2114F1AA38D610034CE9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED2114D1AA38D610034CE9D /* Main.storyboard */; };
@@ -128,6 +129,7 @@
 		8EAAC61B1AA7AD30002B637D /* CDStoryItemSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStoryItemSpec.swift; sourceTree = "<group>"; };
 		8EAAC6211AA7AE10002B637D /* CDStoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStoryItem.swift; sourceTree = "<group>"; };
 		8EAAC6231AA7DAD2002B637D /* XCGLogger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XCGLogger.xcodeproj; path = "../../Downloads/XCGLogger-master-2/XCGLogger/Library/XCGLogger.xcodeproj"; sourceTree = "<group>"; };
+		8EABC1291AA921C100A28B22 /* CDDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDDataManager.swift; sourceTree = "<group>"; };
 		8ECD0DC61AA39C6E00BB6E5E /* Cached-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cached-Bridging-Header.h"; sourceTree = "<group>"; };
 		8ED211441AA38D610034CE9D /* Cached.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cached.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED211481AA38D610034CE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				8EAAC6211AA7AE10002B637D /* CDStoryItem.swift */,
+				8EABC1291AA921C100A28B22 /* CDDataManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ED2114C1AA38D610034CE9D /* FeedViewController.swift in Sources */,
+				8EABC12A1AA921C100A28B22 /* CDDataManager.swift in Sources */,
 				8EAAC6221AA7AE10002B637D /* CDStoryItem.swift in Sources */,
 				8ED2114A1AA38D610034CE9D /* AppDelegate.swift in Sources */,
 				8E863EC71AA7E4C10080FE24 /* CDNetworkService.swift in Sources */,

@@ -13,7 +13,9 @@ public class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var storyCollection = [AnyObject]()
+    let dataManager = CDDataManager()
+    
+    var storyCollection = [CDStoryItem]()
     
 
 
@@ -23,8 +25,11 @@ public class FeedViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-
-        
+        dataManager.createStoryItemsForTopStories(20) {
+            storyItems in
+            self.storyCollection = storyItems
+            self.tableView.reloadData()
+        }
         
     }
     
@@ -42,8 +47,8 @@ extension FeedViewController : UITableViewDataSource {
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-//        cell.textLabel?.text = (storyCollection[indexPath.row] as CDStoryItem)._title
-        cell.textLabel?.text = "\(indexPath.row)"
+        cell.textLabel?.text = (storyCollection[indexPath.row])._title
+//        cell.textLabel?.text = "\(indexPath.row)"
         return cell
     }
     
