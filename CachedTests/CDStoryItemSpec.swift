@@ -12,7 +12,10 @@ class CDStoryItemSpec: QuickSpec {
             beforeEach {
                 story = CDStoryItem(id:"000000",
                     title:"Dummy Title",
+                    author:"John Smith",
+                    time:"5 hrs ago",
                     url:"http://dummy.com",
+                    score:"500pts",
                     text:"Dummy Text")
             }
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		253A32D92CD52804146290C4 /* libPods-CachedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04114B9027E89A79162C51D0 /* libPods-CachedTests.a */; };
+		8E23E40B1AAA640E000EC08D /* CDWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E23E40A1AAA640E000EC08D /* CDWebViewController.swift */; };
 		8E863EC71AA7E4C10080FE24 /* CDNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E863EC61AA7E4C10080FE24 /* CDNetworkService.swift */; };
 		8E863EC91AA7EF680080FE24 /* CDNetworkServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E863EC81AA7EF680080FE24 /* CDNetworkServiceSpec.swift */; };
 		8E9C11571AA43DD5008B4603 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9C11551AA43DD5008B4603 /* Nimble.framework */; };
@@ -23,11 +24,14 @@
 		8EABC1321AAA279F00A28B22 /* CDFeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABC1311AAA279F00A28B22 /* CDFeedTableView.swift */; };
 		8EABC1341AAA27E500A28B22 /* CDFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABC1331AAA27E500A28B22 /* CDFeedTableViewCell.swift */; };
 		8EABC1371AAA296D00A28B22 /* CDColorPalete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABC1361AAA296D00A28B22 /* CDColorPalete.swift */; };
+		8EABC1391AAA595D00A28B22 /* CDThinLineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABC1381AAA595D00A28B22 /* CDThinLineButton.swift */; };
 		8ED2114A1AA38D610034CE9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED211491AA38D610034CE9D /* AppDelegate.swift */; };
-		8ED2114C1AA38D610034CE9D /* CDFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2114B1AA38D610034CE9D /* CDFeedViewController.swift */; };
+		8ED2114C1AA38D610034CE9D /* CDFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2114B1AA38D610034CE9D /* CDFeedController.swift */; };
 		8ED2114F1AA38D610034CE9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED2114D1AA38D610034CE9D /* Main.storyboard */; };
 		8ED211511AA38D610034CE9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED211501AA38D610034CE9D /* Images.xcassets */; };
 		8ED211541AA38D610034CE9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ED211521AA38D610034CE9D /* LaunchScreen.xib */; };
+		8EFDA04D1AACC20100C8C2E1 /* CDFeedTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDA04C1AACC20100C8C2E1 /* CDFeedTableViewCellModel.swift */; };
+		8EFDA0541AACCEBC00C8C2E1 /* CDFeedControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDA0531AACCEBC00C8C2E1 /* CDFeedControllerModel.swift */; };
 		A5B0E232E088EF48304B73BC /* libPods-Cached.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DE79DB9B407DCF96EFE3A9 /* libPods-Cached.a */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +127,7 @@
 		0C6711442E6301C366CD7C51 /* Pods-Cached.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cached.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cached/Pods-Cached.debug.xcconfig"; sourceTree = "<group>"; };
 		34DE79DB9B407DCF96EFE3A9 /* libPods-Cached.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cached.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		775FE6C25EBFC2EF3690C857 /* Pods-CachedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CachedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CachedTests/Pods-CachedTests.release.xcconfig"; sourceTree = "<group>"; };
+		8E23E40A1AAA640E000EC08D /* CDWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDWebViewController.swift; sourceTree = "<group>"; };
 		8E863EC61AA7E4C10080FE24 /* CDNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDNetworkService.swift; sourceTree = "<group>"; };
 		8E863EC81AA7EF680080FE24 /* CDNetworkServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDNetworkServiceSpec.swift; sourceTree = "<group>"; };
 		8E9C11551AA43DD5008B4603 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
@@ -136,16 +141,19 @@
 		8EABC1311AAA279F00A28B22 /* CDFeedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDFeedTableView.swift; sourceTree = "<group>"; };
 		8EABC1331AAA27E500A28B22 /* CDFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDFeedTableViewCell.swift; sourceTree = "<group>"; };
 		8EABC1361AAA296D00A28B22 /* CDColorPalete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDColorPalete.swift; sourceTree = "<group>"; };
+		8EABC1381AAA595D00A28B22 /* CDThinLineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDThinLineButton.swift; sourceTree = "<group>"; };
 		8ECD0DC61AA39C6E00BB6E5E /* Cached-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cached-Bridging-Header.h"; sourceTree = "<group>"; };
 		8ED211441AA38D610034CE9D /* Cached.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cached.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED211481AA38D610034CE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ED211491AA38D610034CE9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8ED2114B1AA38D610034CE9D /* CDFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDFeedViewController.swift; sourceTree = "<group>"; };
+		8ED2114B1AA38D610034CE9D /* CDFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDFeedController.swift; sourceTree = "<group>"; };
 		8ED2114E1AA38D610034CE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8ED211501AA38D610034CE9D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8ED211531AA38D610034CE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8ED211591AA38D610034CE9D /* CachedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CachedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED2115E1AA38D610034CE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EFDA04C1AACC20100C8C2E1 /* CDFeedTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDFeedTableViewCellModel.swift; sourceTree = "<group>"; };
+		8EFDA0531AACCEBC00C8C2E1 /* CDFeedControllerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDFeedControllerModel.swift; sourceTree = "<group>"; };
 		A2A3CE49BB73E23C9A8199B2 /* Pods-CachedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CachedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CachedTests/Pods-CachedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C76EA0AA0880DA823E935F0C /* Pods-Cached.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cached.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cached/Pods-Cached.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +191,14 @@
 				04114B9027E89A79162C51D0 /* libPods-CachedTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E23E4041AAA63C8000EC08D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				8E23E40A1AAA640E000EC08D /* CDWebViewController.swift */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		8E863EC01AA7E4AA0080FE24 /* Network Service */ = {
@@ -226,9 +242,11 @@
 		8EABC1301AAA277100A28B22 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				8ED2114B1AA38D610034CE9D /* CDFeedViewController.swift */,
+				8ED2114B1AA38D610034CE9D /* CDFeedController.swift */,
+				8EFDA0531AACCEBC00C8C2E1 /* CDFeedControllerModel.swift */,
 				8EABC1311AAA279F00A28B22 /* CDFeedTableView.swift */,
 				8EABC1331AAA27E500A28B22 /* CDFeedTableViewCell.swift */,
+				8EFDA04C1AACC20100C8C2E1 /* CDFeedTableViewCellModel.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -237,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				8EABC1361AAA296D00A28B22 /* CDColorPalete.swift */,
+				8EABC1381AAA595D00A28B22 /* CDThinLineButton.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -266,6 +285,7 @@
 		8ED211461AA38D610034CE9D /* Cached */ = {
 			isa = PBXGroup;
 			children = (
+				8E23E4041AAA63C8000EC08D /* New Group */,
 				8EABC1351AAA292C00A28B22 /* Common */,
 				8EABC1301AAA277100A28B22 /* Feed */,
 				8E863EC01AA7E4AA0080FE24 /* Network Service */,
@@ -550,13 +570,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ED2114C1AA38D610034CE9D /* CDFeedViewController.swift in Sources */,
+				8ED2114C1AA38D610034CE9D /* CDFeedController.swift in Sources */,
+				8EABC1391AAA595D00A28B22 /* CDThinLineButton.swift in Sources */,
+				8EFDA0541AACCEBC00C8C2E1 /* CDFeedControllerModel.swift in Sources */,
 				8EABC12A1AA921C100A28B22 /* CDDataManager.swift in Sources */,
+				8EFDA04D1AACC20100C8C2E1 /* CDFeedTableViewCellModel.swift in Sources */,
 				8EAAC6221AA7AE10002B637D /* CDStoryItem.swift in Sources */,
 				8ED2114A1AA38D610034CE9D /* AppDelegate.swift in Sources */,
 				8EABC1371AAA296D00A28B22 /* CDColorPalete.swift in Sources */,
 				8EABC1321AAA279F00A28B22 /* CDFeedTableView.swift in Sources */,
 				8EABC1341AAA27E500A28B22 /* CDFeedTableViewCell.swift in Sources */,
+				8E23E40B1AAA640E000EC08D /* CDWebViewController.swift in Sources */,
 				8E863EC71AA7E4C10080FE24 /* CDNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

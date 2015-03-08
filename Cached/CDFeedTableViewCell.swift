@@ -16,6 +16,10 @@ class CDFeedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setup()
+    }
+    
+    func setup() {
         backgroundColor = UIColor.clearColor()
         contentView.backgroundColor = UIColor.clearColor()
         cardView.backgroundColor = UIColor.cdWhite()

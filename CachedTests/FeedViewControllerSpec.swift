@@ -6,11 +6,11 @@ import UIKit
 class FeedViewControllerSpec: QuickSpec {
     override func spec() {
         
-        var viewController:CDFeedViewController!
+        var viewController:CDFeedController!
         
         beforeEach {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            viewController = storyboard.instantiateViewControllerWithIdentifier("FeedViewControllerID") as! CDFeedViewController
+            viewController = storyboard.instantiateViewControllerWithIdentifier("FeedViewControllerID") as! CDFeedController
         }
         
         describe(".viewDidLoad()") {

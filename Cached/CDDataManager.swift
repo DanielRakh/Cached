@@ -27,9 +27,12 @@ public class CDDataManager  {
             for (idx, _) in enumerate(stories) {
                 
                 let storyItem = CDStoryItem(
-                    id: stories[idx]["id"] as? String,
+                    id: (stories[idx]["id"] as! NSNumber).stringValue,
                     title: stories[idx]["title"] as? String,
+                    author: stories[idx]["by"] as? String,
+                    time: stories[idx]["time"] as? String,
                     url: stories[idx]["url"] as? String,
+                    score: stories[idx]["score"] as? String,
                     text: stories[idx]["text"] as? String)
                 
                 tmpStoryItems.append(storyItem)
