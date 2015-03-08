@@ -12,7 +12,7 @@ import Bond
 class CDFeedTableViewCellModel {
     
     let id: Dynamic<String>
-    let title: Dynamic<String?>
+    let title: Dynamic<String>
     let author: Dynamic<String?>
     let time: Dynamic<String?>
     let url: Dynamic<String?>
@@ -20,7 +20,7 @@ class CDFeedTableViewCellModel {
     let text: Dynamic<String?>
 
     
-    init(id:String, title:String?, author:String?, time:String?, url:String?, score:String?, text:String?) {
+    init(id:String, title:String, author:String?, time:String?, url:String?, score:String?, text:String?) {
         
         self.id = Dynamic(id)
         self.title = Dynamic(title)

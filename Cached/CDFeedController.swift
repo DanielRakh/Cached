@@ -14,14 +14,12 @@ public class CDFeedController: UIViewController {
     
     @IBOutlet weak var tableView: CDFeedTableView!
     
-    var feedViewModel:CDFeedControllerModel!
+    var feedViewModel = CDFeedControllerModel()
     var tableViewDataSourceBond:UITableViewDataSourceBond<UITableViewCell>!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
    
-//        tableView.dataSource = self
-//        tableView.delegate = self
         tableView.separatorStyle = .None
         tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0)
 //        tableView.estimatedRowHeight = 90.0
@@ -29,15 +27,13 @@ public class CDFeedController: UIViewController {
         
         view.backgroundColor = UIColor.cdOffWhite()
         
-        feedViewModel = CDFeedControllerModel()
-        
         tableViewDataSourceBond = UITableViewDataSourceBond(tableView: self.tableView)
         
         feedViewModel.storyCellModels.map {
             [unowned self] (viewModel:CDFeedTableViewCellModel) -> CDFeedTableViewCell in
             
             let cell = (self.tableView.dequeueReusableCellWithIdentifier("Cell") as? CDFeedTableViewCell)!
-            viewModel.id ->> cell.titleLabel
+            viewModel.title ->> cell.titleLabel
             return cell
         } ->> tableViewDataSourceBond
         

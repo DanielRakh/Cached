@@ -28,7 +28,7 @@ public class CDDataManager  {
                 
                 let storyItem = CDStoryItem(
                     id: (stories[idx]["id"] as! NSNumber).stringValue,
-                    title: stories[idx]["title"] as? String,
+                    title: stories[idx]["title"] as! String,
                     author: stories[idx]["by"] as? String,
                     time: stories[idx]["time"] as? String,
                     url: stories[idx]["url"] as? String,
