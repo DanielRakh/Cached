@@ -22,8 +22,8 @@ public class CDFeedController: UIViewController {
    
         tableView.separatorStyle = .None
         tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0)
-//        tableView.estimatedRowHeight = 90.0
-//        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         view.backgroundColor = UIColor.cdOffWhite()
         
@@ -37,13 +37,19 @@ public class CDFeedController: UIViewController {
             return cell
         } ->> tableViewDataSourceBond
         
-        
 
     }
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         feedViewModel.fetchTopStories(20)
+    }
+    
+    public override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.estimatedRowHeight = 90
+
+        tableView.reloadData()
     }
     
 }
@@ -71,3 +77,4 @@ extension CDFeedController : UITableViewDelegate {
 }
 */
 
+//
