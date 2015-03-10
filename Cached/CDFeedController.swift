@@ -36,7 +36,7 @@ public class CDFeedController: UIViewController {
             [unowned self] (viewModel:CDFeedTableViewCellModel) -> CDFeedTableViewCell in
             
             let cell = (self.tableView.dequeueReusableCellWithIdentifier("CardCell") as? CDFeedTableViewCell)!
-//            viewModel.title ->> cell.titleLabel
+            viewModel.title ->> cell.titleLabel
             cell.setNeedsUpdateConstraints()
             cell.updateConstraintsIfNeeded()
             return cell
@@ -47,7 +47,7 @@ public class CDFeedController: UIViewController {
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        feedViewModel.fetchTopStories(20)
+        feedViewModel.fetchTopStories(50)
     }
     
     public override func viewDidAppear(animated: Bool) {

@@ -11,10 +11,12 @@ import UIKit
 class CDFeedTableViewCell: UITableViewCell {
     
     let kCardViewInset:CGFloat = 10
+    let kInnerViewInset:CGFloat = 8
     
     
     var cardView = UIView.newAutoLayoutView()
-    var titleLabel = UIView.newAutoLayoutView()
+    var titleLabel = UILabel.newAutoLayoutView()
+    var commentsButton = CDThinLineButton.newAutoLayoutView()
     
     
     var didSetupConstraints = false
@@ -30,7 +32,7 @@ class CDFeedTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
         setupViews()
     }
-
+    
     
     
     func setupViews() {
@@ -47,24 +49,58 @@ class CDFeedTableViewCell: UITableViewCell {
         cardView.layer.borderWidth = 0.5
         cardView.layer.borderColor = UIColor.cdLightGray().CGColor
         
-        addSubview(cardView)
+        contentView.addSubview(cardView)
         
-        //TODO: Set up Title Label
+        // Set up Title Label
+        titleLabel.lineBreakMode = .ByTruncatingTail
+        titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = .Left
+        titleLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 14.0)
         
+        cardView.addSubview(titleLabel)
+        
+        // Set up Comments Button
+        cardView.addSubview(commentsButton)
     }
     
     
     override func updateConstraints() {
         if !didSetupConstraints {
             
-            // Setup Card View Auto Layout
+            
+       
+            // Card View Constraints
             cardView.autoPinEdgeToSuperviewEdge(.Top)
             cardView.autoPinEdgeToSuperviewEdge(.Leading, withInset: kCardViewInset)
             cardView.autoPinEdgeToSuperviewEdge(.Trailing, withInset: kCardViewInset)
-            cardView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: kCardViewInset)
             
-            // 
+            UIView.autoSetPriority(750) {
+                         cardView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: kCardViewInset)
+            }
+   
             
+            // Title Label Constraints
+            
+            UIView.autoSetPriority(1000) {
+                self.titleLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
+                //                self.bodyLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
+            }
+            titleLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: kInnerViewInset)
+            titleLabel.autoPinEdgeToSuperviewEdge(.Leading, withInset: kInnerViewInset)
+            titleLabel.autoPinEdgeToSuperviewEdge(.Trailing, withInset: kInnerViewInset)
+//            titleLabel.autoPinEdgeToSuperviewEdge(.Bottom)
+            
+            // Comments Button Constraints
+            commentsButton.autoSetDimensionsToSize(CGSizeMake(86, 24))
+            commentsButton.autoPinEdgeToSuperviewEdge(.Trailing, withInset: kInnerViewInset)
+            commentsButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: kInnerViewInset)
+            commentsButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: titleLabel, withOffset: 20.0, relation: .Equal)
+
+            
+            UIView.autoSetPriority(1000) {
+                self.commentsButton.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
+                self.commentsButton.autoSetContentCompressionResistancePriorityForAxis(.Horizontal)
+            }
             
             didSetupConstraints = true
             

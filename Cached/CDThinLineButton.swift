@@ -8,14 +8,26 @@
 
 import UIKit
 
-@IBDesignable class CDThinLineButton: UIButton {
+
+class CDThinLineButton: UIButton {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    override init() {
+        super.init()
+        setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setup()
     }
     
     func setup() {
+        
         backgroundColor = UIColor.clearColor()
         layer.cornerRadius = 4.0
         layer.borderColor = UIColor.cdOrange().CGColor
@@ -25,7 +37,4 @@ import UIKit
         setTitle("10 Comments", forState: .Normal)
     }
     
-    override func prepareForInterfaceBuilder() {
-        setup()
-    }
 }
