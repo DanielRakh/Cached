@@ -24,6 +24,9 @@ public class CDFeedController: UIViewController {
         tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0)
         
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 90
+
+        tableView.registerClass(CDFeedTableViewCell.self, forCellReuseIdentifier: "CardCell")
         
         view.backgroundColor = UIColor.cdOffWhite()
         
@@ -32,8 +35,10 @@ public class CDFeedController: UIViewController {
         feedViewModel.storyCellModels.map {
             [unowned self] (viewModel:CDFeedTableViewCellModel) -> CDFeedTableViewCell in
             
-            let cell = (self.tableView.dequeueReusableCellWithIdentifier("Cell") as? CDFeedTableViewCell)!
-            viewModel.title ->> cell.titleLabel
+            let cell = (self.tableView.dequeueReusableCellWithIdentifier("CardCell") as? CDFeedTableViewCell)!
+//            viewModel.title ->> cell.titleLabel
+            cell.setNeedsUpdateConstraints()
+            cell.updateConstraintsIfNeeded()
             return cell
         } ->> tableViewDataSourceBond
         
@@ -47,8 +52,6 @@ public class CDFeedController: UIViewController {
     
     public override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        tableView.estimatedRowHeight = 90
-
         tableView.reloadData()
     }
     
