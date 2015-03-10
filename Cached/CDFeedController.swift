@@ -37,6 +37,7 @@ public class CDFeedController: UIViewController {
             
             let cell = (self.tableView.dequeueReusableCellWithIdentifier("CardCell") as? CDFeedTableViewCell)!
             viewModel.title ->> cell.titleLabel
+            cell.infoLabel.text = "154 Points | by sharjell | 5 hrs ago"
             cell.setNeedsUpdateConstraints()
             cell.updateConstraintsIfNeeded()
             return cell
