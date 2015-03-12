@@ -26,15 +26,7 @@ class CDFeedControllerModel {
         dataManager.createStoryItemsForTopStories(count) {
             storyItems in
             for story in storyItems {
-                
-                let cellModel = CDFeedTableViewCellModel(id: story._id,
-                    title: story._title,
-                    author: story._author,
-                    time: story._time,
-                    url: story._url,
-                    score: story._score,
-                    text: story._text)
-                
+                let cellModel = CDFeedTableViewCellModel(storyItem: story)
                 newStories.append(cellModel)
             }
             

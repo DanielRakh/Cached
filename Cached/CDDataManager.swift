@@ -29,10 +29,10 @@ public class CDDataManager  {
                 let storyItem = CDStoryItem(
                     id: (stories[idx]["id"] as! NSNumber).stringValue,
                     title: stories[idx]["title"] as! String,
-                    author: stories[idx]["by"] as? String,
-                    time: stories[idx]["time"] as? String,
+                    author: stories[idx]["by"] as! String,
+                    time: (stories[idx]["time"] as! NSNumber).stringValue,
                     url: stories[idx]["url"] as? String,
-                    score: stories[idx]["score"] as? String,
+                    score: (stories[idx]["score"] as! NSNumber).stringValue,
                     text: stories[idx]["text"] as? String)
                 
                 tmpStoryItems.append(storyItem)
