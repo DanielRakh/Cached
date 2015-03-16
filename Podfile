@@ -5,6 +5,9 @@ target 'Cached' do
 
 pod 'Firebase', '>= 2.2.0'
 pod 'PureLayout'
+pod 'DateTools'
+
+
 
 
 end

@@ -1,12 +1,15 @@
 PODS:
+  - DateTools (1.5.0)
   - Firebase (2.2.0)
   - PureLayout (2.0.5)
 
 DEPENDENCIES:
+  - DateTools
   - Firebase (>= 2.2.0)
   - PureLayout
 
 SPEC CHECKSUMS:
+  DateTools: 7df78f0c4719eb28cfd2d58a90fafd036e73156c
   Firebase: e7a2ea2ffeff99f9c37028b354194dcc9718d36b
   PureLayout: 63a3257320223e8edddcd3afb407445f85a6bf74
 
