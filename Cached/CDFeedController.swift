@@ -39,6 +39,7 @@ public class CDFeedController: UIViewController {
 
             viewModel.fullTitle ->> cell.titleLabel.dynAttributedText
             
+            
             cell.setNeedsUpdateConstraints()
             cell.updateConstraintsIfNeeded()
             return cell

@@ -30,7 +30,8 @@ class CDFeedControllerModel {
                 newStories.append(cellModel)
             }
             
-            self.storyCellModels.splice(newStories.reverse(), atIndex: 0)
+            self.storyCellModels.splice(newStories, atIndex: 0)
+            println(self.storyCellModels)
         }
     }
 }

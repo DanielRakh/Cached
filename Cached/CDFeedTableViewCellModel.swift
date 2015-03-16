@@ -13,17 +13,17 @@ class CDFeedTableViewCellModel {
     
     lazy var fullTitle:Dynamic<NSAttributedString> = {
         
-        let attriString = NSAttributedString(string:self.title + " " + "\(self.url!)", attributes:
+        let titleString = NSAttributedString(string: self.title, attributes:[NSFontAttributeName : UIFont(name:"AvenirNext-DemiBold", size: 14.0)!])
+        
+        let urlString = NSAttributedString(string:" (\(self.url!.pathComponents[1]))", attributes:
             [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
-        return Dynamic(attriString)
+        
+        let fullString:NSMutableAttributedString = NSMutableAttributedString(attributedString: titleString)
+        fullString.appendAttributedString(urlString)
+        
+        return Dynamic(fullString)
     }()
-    
-//    
-//    lazy var commentsAmount:Dynamic<String> = {
-//        
-//    }()
-    
-//    let title:Dynamic<String>
+
     
     let text:Dynamic<String?>
     
@@ -52,4 +52,12 @@ class CDFeedTableViewCellModel {
         self.text = Dynamic(storyItem._text)
         self.title = storyItem._title
     }
+    
+    
+    func firstRealPathForURLString(url:String) -> String {
+        let str = url.pathComponents[1]
+        return str
+    }
+    
+    
 }
