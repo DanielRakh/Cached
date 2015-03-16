@@ -1,9 +1,0 @@
-[submodule "Quick"]
-	path = Quick
-	url = git@github.com:Quick/Quick.git
-[submodule "Nimble"]
-	path = Nimble
-	url = git@github.com:Quick/Nimble.git
-[submodule "bonds"]
-	path = Bond
-	url = git@github.com:SwiftBond/Bond.git

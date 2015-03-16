@@ -7,10 +7,4 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Quick/Quick.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Nimble/Nimble.xcodeproj">
-   </FileRef>
 </Workspace>

@@ -1,16 +1,39 @@
 PODS:
+  - Bond (3.2.0)
   - DateTools (1.5.0)
   - Firebase (2.2.0)
+  - Nimble (0.4.0)
   - PureLayout (2.0.5)
+  - Quick (0.2.2)
 
 DEPENDENCIES:
+  - Bond (= 3.2.0)
   - DateTools
   - Firebase (>= 2.2.0)
+  - Nimble (from `https://github.com/Quick/Nimble.git`)
   - PureLayout
+  - Quick (from `https://github.com/Quick/Quick.git`)
+
+EXTERNAL SOURCES:
+  Nimble:
+    :git: https://github.com/Quick/Nimble.git
+  Quick:
+    :git: https://github.com/Quick/Quick.git
+
+CHECKOUT OPTIONS:
+  Nimble:
+    :commit: 6a679cbf20da3fe570c26296b3029dd168b72c00
+    :git: https://github.com/Quick/Nimble.git
+  Quick:
+    :commit: 70d2bdd059430a528a28c53d4e9697b97abac2e5
+    :git: https://github.com/Quick/Quick.git
 
 SPEC CHECKSUMS:
+  Bond: 7f3851ebfa97e0f5d8e6c7a4d58f8491d0b3505b
   DateTools: 7df78f0c4719eb28cfd2d58a90fafd036e73156c
   Firebase: e7a2ea2ffeff99f9c37028b354194dcc9718d36b
+  Nimble: a05c15e0955baec1c94a22e25e4f8dea884fbc5f
   PureLayout: 63a3257320223e8edddcd3afb407445f85a6bf74
+  Quick: 1bda8b4c8d43f6b4dd69ca001918b1767b3c9c93
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.0
