@@ -38,6 +38,7 @@ public class CDFeedController: UIViewController {
             let cell = (self.tableView.dequeueReusableCellWithIdentifier("CardCell") as? CDFeedTableViewCell)!
 
             viewModel.fullTitle ->> cell.titleLabel.dynAttributedText
+            viewModel.info ->> cell.infoLabel.dynAttributedText
             
             
             cell.setNeedsUpdateConstraints()

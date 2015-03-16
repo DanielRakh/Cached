@@ -27,11 +27,23 @@ class CDFeedTableViewCellModel {
     
     let text:Dynamic<String?>
     
-    lazy var info:Dynamic<String> = {
-        let attriString = NSAttributedString(string:"\(self.score) Pts", attributes:
+    lazy var info:Dynamic<NSAttributedString> = {
+        
+        let scoreString:NSAttributedString = NSAttributedString(string:"\(self.score) Points | ", attributes:
+            [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!, NSForegroundColorAttributeName : UIColor.cdOrange()])
+        
+        let authorString = NSAttributedString(string:" | \(self.author)", attributes:
             [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
-        let str = String(_cocoaString: attriString)
-        return Dynamic(str)
+        
+        let timeString = NSAttributedString(string:" | \(self.time)", attributes:
+            [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
+        
+        let fullString:NSMutableAttributedString = NSMutableAttributedString(attributedString: scoreString)
+        fullString.appendAttributedString(authorString)
+        fullString.appendAttributedString(timeString)
+        
+        return Dynamic(fullString)
+        
         }()
     
     private let id:String
@@ -54,10 +66,12 @@ class CDFeedTableViewCellModel {
     }
     
     
-    func firstRealPathForURLString(url:String) -> String {
-        let str = url.pathComponents[1]
-        return str
-    }
+//    func formatUNIXTimeStamp(unixTime:NSTimeInterval) -> String {
+//        
+//        let date = NSDate(timeIntervalSinceNow: unixTime)
+//        let dateFormatter = NSDateFormatter()
+//    }
+//    
     
     
 }
