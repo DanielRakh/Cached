@@ -15,11 +15,23 @@ class CDFeedTableViewCellModel {
         
         let titleString = NSAttributedString(string: self.title, attributes:[NSFontAttributeName : UIFont(name:"AvenirNext-DemiBold", size: 14.0)!])
         
-        let urlString = NSAttributedString(string:" (\(self.url!.pathComponents[1]))", attributes:
-            [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
+        var urlString:NSAttributedString?
+        
+        if count(self.url!) > 0 {
+            
+            urlString = NSAttributedString(string:" (\(self.url!.pathComponents[1]))", attributes:
+                [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
+        }
+    
         
         let fullString:NSMutableAttributedString = NSMutableAttributedString(attributedString: titleString)
-        fullString.appendAttributedString(urlString)
+        
+        if urlString != nil {
+            fullString.appendAttributedString(urlString!)
+        }
+
+        
+       
         
         return Dynamic(fullString)
     }()
@@ -35,7 +47,19 @@ class CDFeedTableViewCellModel {
         let authorString = NSAttributedString(string:" | \(self.author)", attributes:
             [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
         
-        let timeString = NSAttributedString(string:" | \(self.time)", attributes:
+        
+//        142654410
+        let date1 : NSDate = NSDate(timeIntervalSince1970: NSString(string: self.time).doubleValue)
+//        let date2 : NSDate = NSDate() //initialized by default with the current date
+        
+//        let interval = date1.timeIntervalSinceDate(date2)
+        
+//        let date3 = NSDate(timeIntervalSinceNow: interval)
+        
+//        let str = date1.timeAgoSinceNow()
+        
+        
+        let timeString = NSAttributedString(string:" | \(date1.timeAgoSinceNow())", attributes:
             [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
         
         let fullString:NSMutableAttributedString = NSMutableAttributedString(attributedString: scoreString)
@@ -66,12 +90,13 @@ class CDFeedTableViewCellModel {
     }
     
     
-//    func formatUNIXTimeStamp(unixTime:NSTimeInterval) -> String {
-//        
-//        let date = NSDate(timeIntervalSinceNow: unixTime)
-//        let dateFormatter = NSDateFormatter()
-//    }
-//    
+    func formatUNIXTimeStamp(unixTime:NSTimeInterval) -> String {
+        
+        
+        let date = NSDate(timeIntervalSinceNow: unixTime)
+        return date.timeAgoSinceNow()
+    }
+    
     
     
 }
