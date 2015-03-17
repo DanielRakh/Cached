@@ -18,26 +18,19 @@ class CDFeedTableViewCellModel {
         var urlString:NSAttributedString?
         
         if count(self.url!) > 0 {
-            
             urlString = NSAttributedString(string:" (\(self.url!.pathComponents[1]))", attributes:
                 [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
         }
-    
         
         let fullString:NSMutableAttributedString = NSMutableAttributedString(attributedString: titleString)
         
         if urlString != nil {
             fullString.appendAttributedString(urlString!)
         }
-
-        
-       
         
         return Dynamic(fullString)
     }()
 
-    
-    let text:Dynamic<String?>
     
     lazy var info:Dynamic<NSAttributedString> = {
         
@@ -48,20 +41,10 @@ class CDFeedTableViewCellModel {
             [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
         
         
-//        142654410
-        let date1 : NSDate = NSDate(timeIntervalSince1970: NSString(string: self.time).doubleValue)
-//        let date2 : NSDate = NSDate() //initialized by default with the current date
+        let creationDate = NSDate(timeIntervalSince1970: NSString(string: self.time).doubleValue)
         
-//        let interval = date1.timeIntervalSinceDate(date2)
-        
-//        let date3 = NSDate(timeIntervalSinceNow: interval)
-        
-//        let str = date1.timeAgoSinceNow()
-        
-        
-        let timeString = NSAttributedString(string:" | \(date1.timeAgoSinceNow())", attributes:
+        let timeString = NSAttributedString(string:" | \(creationDate.timeAgoSinceNow())", attributes:
             [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
-        
         let fullString:NSMutableAttributedString = NSMutableAttributedString(attributedString: scoreString)
         fullString.appendAttributedString(authorString)
         fullString.appendAttributedString(timeString)
@@ -70,14 +53,34 @@ class CDFeedTableViewCellModel {
         
         }()
     
+    
+    lazy var commentsCount:Dynamic<String> = {
+        
+        if let count = self.kids?.count {
+            if count == 1 {
+                return Dynamic("1 Comment")
+            } else {
+                return Dynamic("\(count) Comments")
+            }
+        } else {
+            return Dynamic("No Comments")
+        }
+        
+    }()
+    
+    
+    let text:Dynamic<String?>
+    
     private let id:String
     private let author:String
     private let time:String
     private let url:String?
     private let score:String
     private let title:String
-    
-    
+    private let kids:DynamicArray<NSNumber>?
+
+
+
     init(storyItem:CDStoryItem) {
         
         self.id = storyItem._id
@@ -87,16 +90,12 @@ class CDFeedTableViewCellModel {
         self.score = storyItem._score
         self.text = Dynamic(storyItem._text)
         self.title = storyItem._title
-    }
-    
-    
-    func formatUNIXTimeStamp(unixTime:NSTimeInterval) -> String {
         
-        
-        let date = NSDate(timeIntervalSinceNow: unixTime)
-        return date.timeAgoSinceNow()
+        if let kids = storyItem._kids {
+            self.kids = DynamicArray(kids)
+        } else {
+            self.kids = nil
+        } 
     }
-    
-    
     
 }

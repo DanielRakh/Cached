@@ -16,7 +16,8 @@ class CDStoryItemSpec: QuickSpec {
                     time:"5 hrs ago",
                     url:"http://dummy.com",
                     score:"500pts",
-                    text:"Dummy Text")
+                    text:"Dummy Text",
+                    kids:[5])
             }
     
             it("Has an ID") {

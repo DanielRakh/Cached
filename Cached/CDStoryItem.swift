@@ -18,8 +18,9 @@ public struct CDStoryItem {
     public let _score:String
     public let _text:String?
     public let _url:String?
+    public let _kids:[NSNumber]?
     
-    public init(id:String, title:String, author:String, time:String, url:String?, score:String, text:String?) {
+    public init(id:String, title:String, author:String, time:String, url:String?, score:String, text:String?, kids:[NSNumber]?) {
         _id = id
         _title = title
         _author = author
@@ -27,5 +28,6 @@ public struct CDStoryItem {
         _url = url
         _score = score
         _text = text
+        _kids = kids
     }
 }

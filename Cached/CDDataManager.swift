@@ -33,7 +33,8 @@ public class CDDataManager  {
                     time: (stories[idx]["time"] as! NSNumber).stringValue,
                     url: stories[idx]["url"] as? String,
                     score: (stories[idx]["score"] as! NSNumber).stringValue,
-                    text: stories[idx]["text"] as? String)
+                    text: stories[idx]["text"] as? String,
+                    kids: stories[idx]["kids"] as? [NSNumber])
                 
                 tmpStoryItems.append(storyItem)
             }

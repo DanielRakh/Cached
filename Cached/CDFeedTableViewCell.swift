@@ -56,7 +56,6 @@ class CDFeedTableViewCell: UITableViewCell {
         titleLabel.lineBreakMode = .ByTruncatingTail
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .Left
-//        titleLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 14.0)
         
         cardView.addSubview(titleLabel)
         
@@ -85,9 +84,6 @@ class CDFeedTableViewCell: UITableViewCell {
             }
    
             // Title Label Constraints
-//            UIView.autoSetPriority(1000) {
-//                self.titleLabel.autoSetContentCompressionResistancePriorityForAxis(.Horizontal)
-//            }
             titleLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: kInnerViewInset)
             titleLabel.autoPinEdgeToSuperviewEdge(.Leading, withInset: kInnerViewInset)
             titleLabel.autoPinEdgeToSuperviewEdge(.Trailing, withInset: kInnerViewInset)
