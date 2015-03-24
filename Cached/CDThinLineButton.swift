@@ -16,10 +16,6 @@ class CDThinLineButton: UIButton {
         setup()
     }
     
-    override init() {
-        super.init()
-        setup()
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

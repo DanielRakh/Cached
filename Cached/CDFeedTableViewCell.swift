@@ -43,7 +43,6 @@ class CDFeedTableViewCell: UITableViewCell {
         backgroundColor = UIColor.clearColor()
         contentView.backgroundColor = UIColor.clearColor()
         
-        
         // Set up Card View - rounded corner cell background
         cardView.backgroundColor = UIColor.cdWhite()
         cardView.layer.cornerRadius = 8.0
