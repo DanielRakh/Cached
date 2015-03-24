@@ -10,6 +10,11 @@
 		6BD97A9930E5A59373D17EB4 /* Pods_CachedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ADDA56751543FCF452B0EB /* Pods_CachedTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7768E78E3F4F35A592CF393A /* Pods_Cached.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60593C0386D0C495F755DC69 /* Pods_Cached.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8E23E40B1AAA640E000EC08D /* CDWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E23E40A1AAA640E000EC08D /* CDWebViewController.swift */; };
+		8E7E7A831AC1F71400D0BB09 /* CALayer+Extensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E7A7F1AC1F71400D0BB09 /* CALayer+Extensions .swift */; };
+		8E7E7A841AC1F71400D0BB09 /* DRRingGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E7A801AC1F71400D0BB09 /* DRRingGradientLayer.swift */; };
+		8E7E7A851AC1F71400D0BB09 /* DRRingShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E7A811AC1F71400D0BB09 /* DRRingShapeLayer.swift */; };
+		8E7E7A861AC1F71400D0BB09 /* DRRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E7A821AC1F71400D0BB09 /* DRRefreshView.swift */; };
+		8E7E7A8A1AC1F93100D0BB09 /* AngleGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E7A891AC1F93100D0BB09 /* AngleGradientLayer.m */; };
 		8E863EC71AA7E4C10080FE24 /* CDNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E863EC61AA7E4C10080FE24 /* CDNetworkService.swift */; };
 		8E863EC91AA7EF680080FE24 /* CDNetworkServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E863EC81AA7EF680080FE24 /* CDNetworkServiceSpec.swift */; };
 		8E9C115E1AA4449A008B4603 /* FeedViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C115D1AA4449A008B4603 /* FeedViewControllerSpec.swift */; };
@@ -89,6 +94,12 @@
 		50D38CD5B1105B633AE4BD0C /* Pods-Cached.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cached.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cached/Pods-Cached.debug.xcconfig"; sourceTree = "<group>"; };
 		60593C0386D0C495F755DC69 /* Pods_Cached.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cached.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E23E40A1AAA640E000EC08D /* CDWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDWebViewController.swift; sourceTree = "<group>"; };
+		8E7E7A7F1AC1F71400D0BB09 /* CALayer+Extensions .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions .swift"; sourceTree = "<group>"; };
+		8E7E7A801AC1F71400D0BB09 /* DRRingGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRRingGradientLayer.swift; sourceTree = "<group>"; };
+		8E7E7A811AC1F71400D0BB09 /* DRRingShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRRingShapeLayer.swift; sourceTree = "<group>"; };
+		8E7E7A821AC1F71400D0BB09 /* DRRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRRefreshView.swift; sourceTree = "<group>"; };
+		8E7E7A881AC1F93100D0BB09 /* AngleGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngleGradientLayer.h; sourceTree = "<group>"; };
+		8E7E7A891AC1F93100D0BB09 /* AngleGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleGradientLayer.m; sourceTree = "<group>"; };
 		8E863EC61AA7E4C10080FE24 /* CDNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDNetworkService.swift; sourceTree = "<group>"; };
 		8E863EC81AA7EF680080FE24 /* CDNetworkServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDNetworkServiceSpec.swift; sourceTree = "<group>"; };
 		8E9C115D1AA4449A008B4603 /* FeedViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -153,6 +164,19 @@
 			name = "New Group";
 			sourceTree = "<group>";
 		};
+		8E7E7A7C1AC1F6D500D0BB09 /* DRRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				8E7E7A881AC1F93100D0BB09 /* AngleGradientLayer.h */,
+				8E7E7A891AC1F93100D0BB09 /* AngleGradientLayer.m */,
+				8E7E7A7F1AC1F71400D0BB09 /* CALayer+Extensions .swift */,
+				8E7E7A801AC1F71400D0BB09 /* DRRingGradientLayer.swift */,
+				8E7E7A811AC1F71400D0BB09 /* DRRingShapeLayer.swift */,
+				8E7E7A821AC1F71400D0BB09 /* DRRefreshView.swift */,
+			);
+			name = DRRefreshControl;
+			sourceTree = "<group>";
+		};
 		8E863EC01AA7E4AA0080FE24 /* Network Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +207,7 @@
 		8EABC1301AAA277100A28B22 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				8E7E7A7C1AC1F6D500D0BB09 /* DRRefreshControl */,
 				8ED2114B1AA38D610034CE9D /* CDFeedController.swift */,
 				8EFDA0531AACCEBC00C8C2E1 /* CDFeedControllerModel.swift */,
 				8EABC1311AAA279F00A28B22 /* CDFeedTableView.swift */,
@@ -510,11 +535,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ED2114C1AA38D610034CE9D /* CDFeedController.swift in Sources */,
+				8E7E7A851AC1F71400D0BB09 /* DRRingShapeLayer.swift in Sources */,
+				8E7E7A831AC1F71400D0BB09 /* CALayer+Extensions .swift in Sources */,
 				8EABC1391AAA595D00A28B22 /* CDThinLineButton.swift in Sources */,
 				8EFDA0541AACCEBC00C8C2E1 /* CDFeedControllerModel.swift in Sources */,
 				8EABC12A1AA921C100A28B22 /* CDDataManager.swift in Sources */,
+				8E7E7A8A1AC1F93100D0BB09 /* AngleGradientLayer.m in Sources */,
+				8E7E7A861AC1F71400D0BB09 /* DRRefreshView.swift in Sources */,
 				8EFDA04D1AACC20100C8C2E1 /* CDFeedTableViewCellModel.swift in Sources */,
 				8EAAC6221AA7AE10002B637D /* CDStoryItem.swift in Sources */,
+				8E7E7A841AC1F71400D0BB09 /* DRRingGradientLayer.swift in Sources */,
 				8ED2114A1AA38D610034CE9D /* AppDelegate.swift in Sources */,
 				8EABC1371AAA296D00A28B22 /* CDColorPalete.swift in Sources */,
 				8EABC1321AAA279F00A28B22 /* CDFeedTableView.swift in Sources */,
