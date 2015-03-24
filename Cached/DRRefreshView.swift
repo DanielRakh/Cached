@@ -20,7 +20,7 @@ class DRRefreshView: UIView {
     private let gradientRingShapeLayer:DRRingGradientLayer
     
     var upperScrollLimit:CGFloat = 140
-    var lowerScrollLimit:CGFloat!
+    var lowerScrollLimit:CGFloat = 64
     
     
     var delegate:DRRefreshViewDelegate?
