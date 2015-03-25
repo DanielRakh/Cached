@@ -51,9 +51,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Bond.framework'
   install_framework 'DateTools.framework'
   install_framework 'PureLayout.framework'
+  install_framework 'pop.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Bond.framework'
   install_framework 'DateTools.framework'
   install_framework 'PureLayout.framework'
+  install_framework 'pop.framework'
 fi
