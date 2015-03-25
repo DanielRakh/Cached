@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import pop
+
 
 protocol DRRefreshViewDelegate {
     
@@ -99,6 +101,8 @@ class DRRefreshView: UIView {
         rotationAnimation.repeatCount = 100
         
         gradientRingShapeLayer.applyBasicAnimation(rotationAnimation, toLayer: gradientRingShapeLayer)
+        
+        
     }
     
     private func scaleRing() {

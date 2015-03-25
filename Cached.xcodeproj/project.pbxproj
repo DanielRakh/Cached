@@ -16,12 +16,7 @@
 		8E7E7A861AC1F71400D0BB09 /* DRRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E7A821AC1F71400D0BB09 /* DRRefreshView.swift */; };
 		8E7E7A8A1AC1F93100D0BB09 /* AngleGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E7A891AC1F93100D0BB09 /* AngleGradientLayer.m */; };
 		8E863EC71AA7E4C10080FE24 /* CDNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E863EC61AA7E4C10080FE24 /* CDNetworkService.swift */; };
-		8E863EC91AA7EF680080FE24 /* CDNetworkServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E863EC81AA7EF680080FE24 /* CDNetworkServiceSpec.swift */; };
-		8E9C115E1AA4449A008B4603 /* FeedViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C115D1AA4449A008B4603 /* FeedViewControllerSpec.swift */; };
-		8EAAC61C1AA7AD30002B637D /* CDStoryItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAAC61B1AA7AD30002B637D /* CDStoryItemSpec.swift */; };
 		8EAAC6221AA7AE10002B637D /* CDStoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAAC6211AA7AE10002B637D /* CDStoryItem.swift */; };
-		8EAAC62F1AA7DAF1002B637D /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAAC62A1AA7DAD3002B637D /* XCGLogger.framework */; };
-		8EAAC6301AA7DAF1002B637D /* XCGLogger.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8EAAC62A1AA7DAD3002B637D /* XCGLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8EABC12A1AA921C100A28B22 /* CDDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABC1291AA921C100A28B22 /* CDDataManager.swift */; };
 		8EABC1321AAA279F00A28B22 /* CDFeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABC1311AAA279F00A28B22 /* CDFeedTableView.swift */; };
 		8EABC1341AAA27E500A28B22 /* CDFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABC1331AAA27E500A28B22 /* CDFeedTableViewCell.swift */; };
@@ -37,34 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8EAAC6291AA7DAD3002B637D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8EAAC6231AA7DAD2002B637D /* XCGLogger.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 55E3EE4519D76F280068C3A7;
-			remoteInfo = "XCGLogger (iOS)";
-		};
-		8EAAC62B1AA7DAD3002B637D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8EAAC6231AA7DAD2002B637D /* XCGLogger.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 554DF41719D76FE7005708BE;
-			remoteInfo = "XCGLogger (OS X)";
-		};
-		8EAAC62D1AA7DAD3002B637D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8EAAC6231AA7DAD2002B637D /* XCGLogger.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 55E3EE5019D76F280068C3A7;
-			remoteInfo = XCGLoggerTests;
-		};
-		8EAAC6311AA7DAF1002B637D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8EAAC6231AA7DAD2002B637D /* XCGLogger.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 55E3EE4419D76F280068C3A7;
-			remoteInfo = "XCGLogger (iOS)";
-		};
 		8ED2115A1AA38D610034CE9D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8ED2113C1AA38D610034CE9D /* Project object */;
@@ -81,7 +48,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8EAAC6301AA7DAF1002B637D /* XCGLogger.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,11 +67,7 @@
 		8E7E7A881AC1F93100D0BB09 /* AngleGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngleGradientLayer.h; sourceTree = "<group>"; };
 		8E7E7A891AC1F93100D0BB09 /* AngleGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleGradientLayer.m; sourceTree = "<group>"; };
 		8E863EC61AA7E4C10080FE24 /* CDNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDNetworkService.swift; sourceTree = "<group>"; };
-		8E863EC81AA7EF680080FE24 /* CDNetworkServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDNetworkServiceSpec.swift; sourceTree = "<group>"; };
-		8E9C115D1AA4449A008B4603 /* FeedViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewControllerSpec.swift; sourceTree = "<group>"; };
-		8EAAC61B1AA7AD30002B637D /* CDStoryItemSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStoryItemSpec.swift; sourceTree = "<group>"; };
 		8EAAC6211AA7AE10002B637D /* CDStoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStoryItem.swift; sourceTree = "<group>"; };
-		8EAAC6231AA7DAD2002B637D /* XCGLogger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XCGLogger.xcodeproj; path = "../../Downloads/XCGLogger-master-2/XCGLogger/Library/XCGLogger.xcodeproj"; sourceTree = "<group>"; };
 		8EABC1291AA921C100A28B22 /* CDDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDDataManager.swift; sourceTree = "<group>"; };
 		8EABC1311AAA279F00A28B22 /* CDFeedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDFeedTableView.swift; sourceTree = "<group>"; };
 		8EABC1331AAA27E500A28B22 /* CDFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDFeedTableViewCell.swift; sourceTree = "<group>"; };
@@ -131,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EAAC62F1AA7DAF1002B637D /* XCGLogger.framework in Frameworks */,
 				7768E78E3F4F35A592CF393A /* Pods_Cached.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,16 +155,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		8EAAC6241AA7DAD2002B637D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8EAAC62A1AA7DAD3002B637D /* XCGLogger.framework */,
-				8EAAC62C1AA7DAD3002B637D /* XCGLogger.framework */,
-				8EAAC62E1AA7DAD3002B637D /* XCGLoggerTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		8EABC1301AAA277100A28B22 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,7 +180,6 @@
 		8ED2113B1AA38D610034CE9D = {
 			isa = PBXGroup;
 			children = (
-				8EAAC6231AA7DAD2002B637D /* XCGLogger.xcodeproj */,
 				8ED211461AA38D610034CE9D /* Cached */,
 				8ED2115C1AA38D610034CE9D /* CachedTests */,
 				8ED211451AA38D610034CE9D /* Products */,
@@ -277,9 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				8ED2115D1AA38D610034CE9D /* Supporting Files */,
-				8E9C115D1AA4449A008B4603 /* FeedViewControllerSpec.swift */,
-				8EAAC61B1AA7AD30002B637D /* CDStoryItemSpec.swift */,
-				8E863EC81AA7EF680080FE24 /* CDNetworkServiceSpec.swift */,
 			);
 			path = CachedTests;
 			sourceTree = "<group>";
@@ -321,7 +268,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8EAAC6321AA7DAF1002B637D /* PBXTargetDependency */,
 			);
 			name = Cached;
 			productName = Cached;
@@ -378,12 +324,6 @@
 			mainGroup = 8ED2113B1AA38D610034CE9D;
 			productRefGroup = 8ED211451AA38D610034CE9D /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 8EAAC6241AA7DAD2002B637D /* Products */;
-					ProjectRef = 8EAAC6231AA7DAD2002B637D /* XCGLogger.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8ED211431AA38D610034CE9D /* Cached */,
@@ -391,30 +331,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		8EAAC62A1AA7DAD3002B637D /* XCGLogger.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = XCGLogger.framework;
-			remoteRef = 8EAAC6291AA7DAD3002B637D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8EAAC62C1AA7DAD3002B637D /* XCGLogger.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = XCGLogger.framework;
-			remoteRef = 8EAAC62B1AA7DAD3002B637D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8EAAC62E1AA7DAD3002B637D /* XCGLoggerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = XCGLoggerTests.xctest;
-			remoteRef = 8EAAC62D1AA7DAD3002B637D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8ED211421AA38D610034CE9D /* Resources */ = {
@@ -558,20 +474,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EAAC61C1AA7AD30002B637D /* CDStoryItemSpec.swift in Sources */,
-				8E9C115E1AA4449A008B4603 /* FeedViewControllerSpec.swift in Sources */,
-				8E863EC91AA7EF680080FE24 /* CDNetworkServiceSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8EAAC6321AA7DAF1002B637D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "XCGLogger (iOS)";
-			targetProxy = 8EAAC6311AA7DAF1002B637D /* PBXContainerItemProxy */;
-		};
 		8ED2115B1AA38D610034CE9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8ED211431AA38D610034CE9D /* Cached */;

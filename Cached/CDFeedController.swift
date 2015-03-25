@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import XCGLogger
 import Bond
 
 public class CDFeedController: UIViewController {
