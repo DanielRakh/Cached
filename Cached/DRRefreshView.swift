@@ -100,9 +100,17 @@ class DRRefreshView: UIView {
         rotationAnimation.toValue = (3 * M_PI) / 2
         rotationAnimation.repeatCount = 100
         
-        gradientRingShapeLayer.applyBasicAnimation(rotationAnimation, toLayer: gradientRingShapeLayer)
+//        gradientRingShapeLayer.applyBasicAnimation(rotationAnimation, toLayer: gradientRingShapeLayer)
         
         
+        let springAnimation = POPBasicAnimation(propertyNamed: kPOPLayerRotation)
+        springAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+//        springAnimation.fromValue = rotationAtStart
+        springAnimation.toValue = NSNumber(float: Float((3 * M_PI) / 2))
+        springAnimation.repeatForever = true
+        springAnimation.duration = 1.0
+        gradientRingShapeLayer.pop_addAnimation(springAnimation, forKey: "test")
+    
     }
     
     private func scaleRing() {
@@ -119,15 +127,14 @@ class DRRefreshView: UIView {
     
     func endRefreshing() {
         isRefreshing = false
-        solidRingShapeLayer.transform = CATransform3DMakeScale(1 , 1, 0)
-        gradientRingShapeLayer.transform = CATransform3DMakeScale(1 , 1 , 0)
         collapseScrollView(scrollView)
     }
     
     private func resetSpinner() {
         self.solidRingShapeLayer.opacity = 1.0
         self.gradientRingShapeLayer.opacity = 0
-        self.gradientRingShapeLayer.removeAllAnimations()
+//        self.gradientRingShapeLayer.removeAllAnimations()
+        self.gradientRingShapeLayer.pop_removeAllAnimations()
     }
     
 }
@@ -149,10 +156,6 @@ extension DRRefreshView: UIScrollViewDelegate {
                 let progress = (contentOffset - lowerScrollLimit) / scrollArea
                 
                 solidRingShapeLayer.strokeEnd = progress
-                solidRingShapeLayer.transform = CATransform3DMakeScale(1 + (progress/8), 1 + (progress/8), 0)
-                gradientRingShapeLayer.transform = CATransform3DMakeScale(1 + (progress/8), 1 + (progress/8), 0)
-
-                
             }
         }
     }
@@ -168,8 +171,6 @@ extension DRRefreshView: UIScrollViewDelegate {
 extension DRRefreshView : DRRingShapeLayerDelegate {
     func ringIsFullyCompleted() {
         if !isRefreshing {
-            solidRingShapeLayer.transform = CATransform3DMakeScale(1 , 1, 0)
-            gradientRingShapeLayer.transform = CATransform3DMakeScale(1 , 1 , 0)
             beginRefreshing()
             delegate?.refreshViewDidRefresh(self)
         }
