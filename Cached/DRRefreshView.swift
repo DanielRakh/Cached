@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Daniel Rakhamimov. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import pop
 
@@ -86,43 +87,49 @@ class DRRefreshView: UIView {
     private func revealSolidSpinner() {
         self.solidRingShapeLayer.opacity = 1.0
         self.gradientRingShapeLayer.opacity = 0
-        self.gradientRingShapeLayer.removeAllAnimations()
+        self.gradientRingShapeLayer.pop_removeAllAnimations()
     }
     
     private func rotateRing() {
-        
-        println("Rotate")
-
-        let rotationAtStart: AnyObject? = gradientRingShapeLayer.valueForKeyPath("transform.rotation")
-        let rotationAnimation = CABasicAnimation(keyPath:"transform.rotation")
-        rotationAnimation.duration = 1.0
-        rotationAnimation.fromValue = rotationAtStart
-        rotationAnimation.toValue = (3 * M_PI) / 2
-        rotationAnimation.repeatCount = 100
-        
-//        gradientRingShapeLayer.applyBasicAnimation(rotationAnimation, toLayer: gradientRingShapeLayer)
-        
-        
-        let springAnimation = POPBasicAnimation(propertyNamed: kPOPLayerRotation)
-        springAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-//        springAnimation.fromValue = rotationAtStart
-        springAnimation.toValue = NSNumber(float: Float((3 * M_PI) / 2))
-        springAnimation.repeatForever = true
-        springAnimation.duration = 1.0
-        gradientRingShapeLayer.pop_addAnimation(springAnimation, forKey: "test")
-    
+        let spinAnimation:POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPLayerRotation)
+        spinAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        spinAnimation.fromValue = -90 * CGFloat(M_PI / 180)
+        spinAnimation.toValue = 270 * CGFloat(M_PI / 180)
+        spinAnimation.repeatCount = 100
+        spinAnimation.duration = 1.0
+        spinAnimation.delegate = self
+        gradientRingShapeLayer.pop_addAnimation(spinAnimation, forKey: "spin")
     }
     
     private func scaleRing() {
+        let scaleAnimation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
+        scaleAnimation.springBounciness = CGFloat(20)
+        scaleAnimation.springSpeed = CGFloat(4)
+        scaleAnimation.toValue = NSValue(CGSize: CGSize(width: 1.2, height: 1.2))
+        scaleAnimation.delegate = self
+        scaleAnimation.removedOnCompletion = true
+//        solidRingShapeLayer.pop_addAnimation(scaleAnimation, forKey: "scaleSolid")
+        scaleAnimation.completionBlock = { (anim:POPAnimation!, finished:Bool) -> () in
+            let scaleAnimation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
+            scaleAnimation.springBounciness = CGFloat(20)
+            scaleAnimation.springSpeed = CGFloat(4)
+            scaleAnimation.removedOnCompletion = true
+            scaleAnimation.toValue = NSValue(CGSize: CGSize(width: 1.0, height: 1.0))
+            self.gradientRingShapeLayer.pop_addAnimation(scaleAnimation, forKey: "scaleDown")
+        }
         
-        
+        gradientRingShapeLayer.pop_addAnimation(scaleAnimation, forKey: "scaleGradient")
+
     }
+    
+    
     
     func beginRefreshing() {
         isRefreshing = true
         self.gradientRingShapeLayer.opacity = 1
         self.solidRingShapeLayer.opacity = 0
-        rotateRing()
+//        rotateRing()
+        scaleRing()
     }
     
     func endRefreshing() {
@@ -130,12 +137,12 @@ class DRRefreshView: UIView {
         collapseScrollView(scrollView)
     }
     
-    private func resetSpinner() {
-        self.solidRingShapeLayer.opacity = 1.0
-        self.gradientRingShapeLayer.opacity = 0
-//        self.gradientRingShapeLayer.removeAllAnimations()
-        self.gradientRingShapeLayer.pop_removeAllAnimations()
-    }
+//    private func resetSpinner() {
+//        self.solidRingShapeLayer.opacity = 1.0
+//        self.gradientRingShapeLayer.opacity = 0
+////        self.gradientRingShapeLayer.removeAllAnimations()
+//        self.gradientRingShapeLayer.pop_removeAllAnimations()
+//    }
     
 }
 
@@ -156,6 +163,8 @@ extension DRRefreshView: UIScrollViewDelegate {
                 let progress = (contentOffset - lowerScrollLimit) / scrollArea
                 
                 solidRingShapeLayer.strokeEnd = progress
+//                solidRingShapeLayer.transform = CATransform3DMakeScale(CGFloat(1 + (progress / 8)), CGFloat(1+(progress / 8)), CGFloat(1+(progress / 8)))
+//                gradientRingShapeLayer.transform = CATransform3DMakeScale(CGFloat(1 + (progress / 8)), CGFloat(1+(progress / 8)), CGFloat(1+(progress / 8)))
             }
         }
     }
