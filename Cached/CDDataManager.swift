@@ -22,21 +22,25 @@ public class CDDataManager  {
         
         var tmpStoryItems = [CDStoryItem]()
         
+        
         networkService.fetchTopStories(count, completion: { (stories:[AnyObject]) -> Void in
             
-            for (idx, _) in enumerate(stories) {
+            for (idx, val) in enumerate(stories) {
                 
-                let storyItem = CDStoryItem(
-                    id: (stories[idx]["id"] as! NSNumber).stringValue,
-                    title: stories[idx]["title"] as! String,
-                    author: stories[idx]["by"] as! String,
-                    time: (stories[idx]["time"] as! NSNumber).stringValue,
-                    url: stories[idx]["url"] as? String,
-                    score: (stories[idx]["score"] as! NSNumber).stringValue,
-                    text: stories[idx]["text"] as? String,
-                    kids: stories[idx]["kids"] as? [NSNumber])
-                
-                tmpStoryItems.append(storyItem)
+                if !(val.isKindOfClass(NSNull)) {
+                    
+                    let storyItem:CDStoryItem = CDStoryItem(
+                        id: (stories[idx]["id"] as! NSNumber).stringValue,
+                        title: stories[idx]["title"] as! String,
+                        author: stories[idx]["by"] as! String,
+                        time: (stories[idx]["time"] as! NSNumber).stringValue,
+                        url: stories[idx]["url"] as? String,
+                        score: (stories[idx]["score"] as! NSNumber).stringValue,
+                        text: stories[idx]["text"] as? String,
+                        kids: stories[idx]["kids"] as? [NSNumber])
+                    
+                    tmpStoryItems.append(storyItem)
+                }
             }
             
             completion(storyItems: tmpStoryItems)

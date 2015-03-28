@@ -30,7 +30,7 @@ public class CDFeedController: UIViewController {
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        feedViewModel.fetchTopStories(50)
+        feedViewModel.fetchTopStories(30)
     }
     
     public override func viewDidAppear(animated: Bool) {
@@ -49,8 +49,8 @@ public class CDFeedController: UIViewController {
         
         tableView.registerClass(CDFeedTableViewCell.self, forCellReuseIdentifier: "CardCell")
         
-
     }
+    
     
     private func setupTableViewModel() {
         tableViewDataSourceBond = UITableViewDataSourceBond(tableView: self.tableView)
@@ -96,6 +96,9 @@ extension CDFeedController : DRRefreshViewDelegate {
     
     func refreshViewDidRefresh(refreshView:DRRefreshView) {
         
+//        feedViewModel.fetchTopStories(50)
+
+        
         delayBySeconds(3, delayedCode: { () -> () in
             refreshView.endRefreshing()
         })
@@ -112,7 +115,13 @@ extension CDFeedController : UITableViewDelegate {
     public func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         refreshView.scrollViewDidEndDragging(scrollView, willDecelerate: decelerate)
     }
+    
+    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("PresentWebViewController", sender: self)
+    }
 }
+
+
 
 /*
 extension CDFeedController : UITableViewDataSource {
@@ -128,13 +137,9 @@ extension CDFeedController : UITableViewDataSource {
     }
     
 }
-
-extension CDFeedController : UITableViewDelegate {
-    
-    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("PresentWebViewController", sender: self)
-    }
-}
 */
+
+
+
 
 //

@@ -13,7 +13,7 @@ class CDFeedTableViewCellModel {
     
     lazy var fullTitle:Dynamic<NSAttributedString> = {
         
-        let titleString = NSAttributedString(string: self.title, attributes:[NSFontAttributeName : UIFont(name:"AvenirNext-DemiBold", size: 14.0)!])
+        let titleString = NSAttributedString(string: self.title ?? "", attributes:[NSFontAttributeName : UIFont(name:"AvenirNext-DemiBold", size: 14.0)!])
         
         var urlString:NSAttributedString?
         
@@ -34,17 +34,29 @@ class CDFeedTableViewCellModel {
     
     lazy var info:Dynamic<NSAttributedString> = {
         
-        let scoreString:NSAttributedString = NSAttributedString(string:"\(self.score) Points | ", attributes:
-            [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!, NSForegroundColorAttributeName : UIColor.cdOrange()])
-        
-        let authorString = NSAttributedString(string:" | \(self.author)", attributes:
-            [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
+        var scoreString = NSAttributedString(string: "")
+        var authorString = NSAttributedString(string: "")
+        var timeString = NSAttributedString(string: "")
         
         
-        let creationDate = NSDate(timeIntervalSince1970: NSString(string: self.time).doubleValue)
+        if let score = self.score {
+            scoreString = NSAttributedString(string:"\(score) Points | ", attributes:
+                [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!, NSForegroundColorAttributeName : UIColor.cdOrange()])
+        }
         
-        let timeString = NSAttributedString(string:" | \(creationDate.timeAgoSinceNow())", attributes:
-            [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
+       
+        if let author = self.author {
+            authorString = NSAttributedString(string:" | \(author)", attributes:
+                [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
+        }
+        
+        if let time = self.time {
+            let creationDate = NSDate(timeIntervalSince1970: NSString(string: time).doubleValue)
+            timeString = NSAttributedString(string:" | \(creationDate.timeAgoSinceNow())", attributes:
+                [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 10.0)!])
+        }
+        
+
         let fullString:NSMutableAttributedString = NSMutableAttributedString(attributedString: scoreString)
         fullString.appendAttributedString(authorString)
         fullString.appendAttributedString(timeString)
@@ -71,12 +83,12 @@ class CDFeedTableViewCellModel {
     
     let text:Dynamic<String?>
     
-    private let id:String
-    private let author:String
-    private let time:String
+    private let id:String?
+    private let author:String?
+    private let time:String?
     private let url:String?
-    private let score:String
-    private let title:String
+    private let score:String?
+    private let title:String?
     private let kids:DynamicArray<NSNumber>?
 
 
